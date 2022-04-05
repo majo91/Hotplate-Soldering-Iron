@@ -9,8 +9,8 @@
 #define COOLDOWN_TIME 60 //60
 #define PREHEAT_TIME 60
 #define REFLOW_TIME 60
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 32 // OLED display height, in pixels
+#define SCREEN_WIDTH 128 // OLED display width, in pixels added
+#define SCREEN_HEIGHT 32 // OLED display height, in pixels added
 #define SCREEN_ADDRESS 0x3C ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
 void regulate_temp(int, int);
 void PrintScreen(String , int , int , int , int );
@@ -198,13 +198,13 @@ void PrintScreen(String state, int soll_temp, int ist_temp, int tim, int percent
   }
 
   if (percentage != 0) {
-    display.setCursor(0, 25);
+    display.setCursor(0, 25);  //changed for smaller display
     str = String(percentage) + " %";
     display.println(str);
   }
 
   display.setTextSize(2);
-  display.setCursor(30, 12);
+  display.setCursor(30, 12);  //changed for smaller display
   str = String(ist_temp) + " deg";
   display.println(str);
 
